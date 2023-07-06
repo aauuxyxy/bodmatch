@@ -1,25 +1,20 @@
-# docker-composeで使用するバージョンを定義しています。2022年5月時点では、3.9が最新です。
 version: '3.9'
-# サービス (コンテナ) を定義します。
 services:
-  # 今回は postgres をサービスとして定義しました。
-  postgres:
-    # Docker Image は postgres:12-alpine を使います。postgres:12-alpine は postgres:12 と比較して、イメージサイズが小さくなっています。
-    image: postgres:12-alpine
-    # コンテナの名前を指定します。
-    container_name: bodmatch_postgres
-    # 環境変数を設定します。
-    environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=secret
-      - POSTGRES_DB=mydb
-    # データの永続化
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    env_file:
+      - ./mysql.env
     volumes:
-      # postgresディレクトリを/var/lib/postgresql/dataにマウントする
-      - bodmatch_db:\Users\uuaax\Develop\postgre-volumes\bodmatch
-    # ポートの指定（HOST:CONTAINER）
+      - bodmatch_db:\Users\uuaax\Develop\mysql-volumes\bodmatch
     ports:
-      - 5432:5432
-# データの永続化
+      - 3306:3306
+  mysql-test:
+    image: mysql:8.0
+    container_name: mysql-test
+    env_file:
+      - ./mysql.env
+    ports:
+      - 3307:3306
 volumes:
   bodmatch_db:

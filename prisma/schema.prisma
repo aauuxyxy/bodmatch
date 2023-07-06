@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -67,10 +67,10 @@ model VerificationToken {
 }
 
 model Article {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String
-  users     User[]
+  id      Int    @id @default(autoincrement())
+  title   String
+  content String
+  users   User[]
 
   @@map("articles")
 }
