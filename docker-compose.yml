@@ -4,7 +4,7 @@ services:
     image: mysql:8.0
     container_name: mysql
     env_file:
-      - ./mysql.env
+      - ./.env.local
     volumes:
       - bodmatch_db:\Users\uuaax\Develop\mysql-volumes\bodmatch
     ports:
@@ -13,7 +13,7 @@ services:
     image: mysql:8.0
     container_name: mysql-test
     env_file:
-      - ./mysql.env
+      - ./.env.local
     ports:
       - 3307:3306
 volumes:
