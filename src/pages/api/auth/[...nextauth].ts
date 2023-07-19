@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import prisma from '../../../../lib/prisma';
 import { NextApiHandler } from 'next';
@@ -18,5 +19,9 @@ const authOptions: NextAuthOptions = {
   ],
   secret: process.env.NEXT_AUTH_SECRET,
 };
+=======
+import NextAuth from "next-auth";
+import { authOptions } from "@/server/auth";
+>>>>>>> refs/remotes/origin/main
 
 export default NextAuth(authOptions);

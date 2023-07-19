@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 version: '3.9'
+=======
+version: "3.9"
+>>>>>>> refs/remotes/origin/main
 services:
   mysql:
     image: mysql:8.0
@@ -9,6 +13,7 @@ services:
       - bodmatch_db:\Users\uuaax\Develop\mysql-volumes\bodmatch
     ports:
       - 3306:3306
+<<<<<<< HEAD
   mysql-test:
     image: mysql:8.0
     container_name: mysql-test
@@ -16,5 +21,7 @@ services:
       - ./.env.local
     ports:
       - 3307:3306
+=======
+>>>>>>> refs/remotes/origin/main
 volumes:
   bodmatch_db:
