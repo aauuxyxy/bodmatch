@@ -6,6 +6,7 @@ import {
   type DefaultSession,
 } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import Auth0Provider from "next-auth/providers/auth0";
 import { env } from "@/env.mjs";
 import { prisma } from "@/server/db";
 
@@ -57,6 +58,9 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
+  pages: {
+    signIn: "/components/auth/signin",
+  },
 };
 
 /**
