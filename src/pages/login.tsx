@@ -32,6 +32,7 @@ const Login: NextPage = () => {
           <div>
             <p>ログインしていません</p>
             <button onClick={() => signIn()}>ログイン</button>
+            <button onClick={() => signOut()}>ログアウト</button>
           </div>
         )
       }
